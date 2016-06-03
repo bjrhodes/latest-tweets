@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Latest Tweet test</title>
+</head>
+    <div id="tweet">Placeholder tweet here...</div>
+<body>
+    <script src="js/ajax.js"></script>
+    <script src="js/tweets.js"></script>
+    <script>
+        (function() {
+            var conf = {urls: {latestTweets: '/php/latest-tweets.php'}};
+            var el = document.getElementById('tweet');
+            var ajax = new mml.ajax();
+            var tweeter = new mml.tweets(conf, el, ajax);
+
+            tweeter.load(3);
+        })();
+    </script>
+</body>
+</html>
